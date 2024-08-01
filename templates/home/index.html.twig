@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil V-Elec
+{% endblock %}
+
+{% block body %}
+	<!--! === MAIN === -->
+	<main>
+		<section class="showcase" id="showcase">
+			<div class="showcase__container container">
+				<h1 class="showcase__title title tittle--main">Entreprise V-Elec</h1>
+				<div class="showcase__desc">
+					<h3 class="tittle">Service Electrique Dans la Région Parisienne, la Somme et l'Oise</h3>
+				</div>
+				<div class="showcase__image">
+					<img src="{{ asset('assets/images/Logo_Kris_white.png') }}" alt="Logo Epsicorp">
+				</div>
+			</div>
+			{% for message in app.flashes('sendEmail') %}
+				<div class="sendMailSuccess">
+					<div class="flash-notice msg__success">
+						<i class="fa fa-check"></i>
+						{{ message }}
+					</div>
+				</div>
+			{% endfor %}
+		</section>
+	</main>
+{% endblock %}
